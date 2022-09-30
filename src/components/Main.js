@@ -35,6 +35,7 @@ export default function Main() {
     setUserGameItem({ ...gameItem });
   };
 
+  // triggered to set computer item when user selects item
   useEffect(() => {
     if (userGameItem) {
       const computerNewItem = getRandomGameItem(gameItems);
@@ -47,14 +48,14 @@ export default function Main() {
     <div className="conainer">
       <div className="main">
         <Result
-          user1GameItem={"Your code here"}
-          user2GameItem={"Your code here"}
-          result={"Your code here"}
+          user1GameItem={userGameItem}
+          user2GameItem={computerGameItem}
+          result={result}
         />
         <Display />
         <Choices
-          gameItems={"Your code here"}
-          handleGameItemChange={"Your code here"}
+          gameItems={gameItems}
+          handleGameItemChange={handleGameItemChange}
         />
       </div>
     </div>
